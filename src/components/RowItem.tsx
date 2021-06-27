@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, TouchableOpacity, StyleSheet} from 'react-native';
+import {Text, TouchableOpacity, StyleSheet, View} from 'react-native';
 
 type Props = {
   rightIcon: JSX.Element;
@@ -19,9 +19,18 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#343434',
   },
+  separator: {
+    backgroundColor: '#E2E2E2',
+    height: StyleSheet.hairlineWidth,
+    marginLeft: 20,
+  },
 });
 
-const RowItem: React.FC<Props> = ({rightIcon, label, onPress}: Props) => {
+export const RowItem: React.FC<Props> = ({
+  rightIcon,
+  label,
+  onPress,
+}: Props) => {
   return (
     <TouchableOpacity style={styles.row} onPress={onPress}>
       <Text style={styles.text}>{label}</Text>
@@ -30,4 +39,4 @@ const RowItem: React.FC<Props> = ({rightIcon, label, onPress}: Props) => {
   );
 };
 
-export default RowItem;
+export const RowSeparator: React.FC = () => <View style={styles.separator} />;
