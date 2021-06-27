@@ -9,13 +9,19 @@
  */
 
 import React from 'react';
-import {SafeAreaView} from 'react-native';
+import {SafeAreaView, StyleSheet} from 'react-native';
 
 import Options from './src/screens/Options';
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
+
 const App = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <Options />
     </SafeAreaView>
   );
